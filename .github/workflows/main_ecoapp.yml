@@ -26,12 +26,12 @@ jobs:
           npm install ./front_end
           npm install ./back_end
           npm install ./admin
-          npm run build --if-present ./front_end
-          npm run build --if-present ./back_end
-          npm run build --if-present ./admin
-          npm run test --if-present ./front_end
-          npm run test --if-present ./back_end
-          npm run test --if-present ./admin
+          npm run build --if-present ./Front-end-r-co
+          npm run build --if-present ./Back-end-e-co
+          npm run build --if-present ./admin-e-co
+          npm run test --if-present ./Front-end-r-co
+          npm run test --if-present ./Back-end-e-co
+          npm run test --if-present ./admin-e-co
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
