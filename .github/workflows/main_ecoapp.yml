@@ -23,13 +23,13 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install ./Front-end-r-co
+          npm install ./Front-end-e-co
           npm install ./Back-end-e-co
           npm install ./admin-e-co
-          npm run build --if-present ./Front-end-r-co
+          npm run build --if-present ./Front-end-e-co
           npm run build --if-present ./Back-end-e-co
           npm run build --if-present ./admin-e-co
-          npm run test --if-present ./Front-end-r-co
+          npm run test --if-present ./Front-end-e-co
           npm run test --if-present ./Back-end-e-co
           npm run test --if-present ./admin-e-co
 
