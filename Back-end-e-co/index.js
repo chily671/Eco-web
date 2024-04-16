@@ -21,7 +21,7 @@ function generateID() {
 }
 
 // Connect Database
-mongoose.connect("mongodb://localhost:27017");
+mongoose.connect("mongodb+srv://20521131:1@cluster0.ncbaliy.mongodb.net/");
 
 // API Creation
 
