@@ -13,17 +13,17 @@ const getDefaultCart = ()=>{
     return cart;
 }
 const ShopContextProvider = (props) => {
-    
+    const [User,setUser] = useState({});
     const [all_product,setAll_Product] = useState([]);
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
     useEffect(()=>{
-        fetch('http://192.168.120.179:4000/allproducts')
+        fetch('/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data))
     
         if(localStorage.getItem('auth-token')){
-            fetch('http://192.168.120.179:4000/getcart',{
+            fetch('/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -31,14 +31,25 @@ const ShopContextProvider = (props) => {
                     'Content-Type':'application/json',
                 },
             }).then((response)=>response.json())
-            .then((data)=>setCartItems(data));
+            .then((data)=>setCartItems(data))
+            
+            fetch('/getinfor',{
+                method:'POST',
+                headers:{
+                    Accept:'application/form-data',
+                    'auth-token':`${localStorage.getItem('auth-token')}`,
+                    'Content-Type':'application/json',
+                },
+            }).then((response)=>response.json())
+            .then((data)=>setUser(data));
         }
     },[])
+
    
     const addToCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]     +1}))
         if(localStorage.getItem('auth-token')){
-            fetch('http://192.168.120.179:4000/addtocart',{
+            fetch('/addtocart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -56,7 +67,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) =>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
         if(localStorage.getItem('auth-token')){
-            fetch('http://192.168.120.179:4000/removefromcart',{
+            fetch('/removefromcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -97,7 +108,7 @@ const ShopContextProvider = (props) => {
 
   
 
-    const contextValue = {getTotalCartItems, getTotalCartAmount, all_product, cartItems, addToCart, removeFromCart}
+    const contextValue = {getTotalCartItems, getTotalCartAmount, all_product, cartItems, addToCart, removeFromCart, User }
     return(
 
         <ShopContext.Provider value={contextValue}>

@@ -14,6 +14,7 @@ import kids_banner from './Components/Assets/banner_kids.png'
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import CheckoutPage from './Pages/Checkout';
+import UserProfile from './Pages/UserProfile';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         <Route path='/checkout' element={<CheckoutPage/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<LoginSignup/>}/>
+        <Route path='/profile/:activepage' element={<UserProfile/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>
