@@ -18,7 +18,6 @@ const LoginSignup = () => {
 
   const login = async () =>{
     console.log("Login Function Excuted",formData)
-    console.log("Login Function Excuted",formData)
     let responseData;
     await fetch('/login',{
       method:'POST',

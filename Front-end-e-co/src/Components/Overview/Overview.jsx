@@ -15,7 +15,7 @@ const Overview = (props) => {
 
         <div className='form-group'>
           <label htmlFor='phone'>Your Phone: </label>
-          <p>133713371337</p>
+          <p>{User.phone}</p>
         </div>
 
         <div className='form-group'>

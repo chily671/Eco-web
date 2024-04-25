@@ -19,6 +19,7 @@
     font-weight: 600;
 }
 .shopcategory-products{
+    width: 90%;
     margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

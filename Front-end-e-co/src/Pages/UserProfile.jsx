@@ -27,7 +27,7 @@ const UserProfile = () => {
                     {activepage === 'accountsettings' && <AccountSetting/>}
                     {activepage === 'changepassword' && <ChangePassword/>}
                     {activepage === 'yourorders' && <YourOrders/>}
-                    {activepage === 'address' && <UserAddress/> }
+                    {activepage === 'address' && <UserAddress User = {User}/> }
                     {activepage === 'legalnotice' && <LegalNotice/>}
                 </div>
             </div>

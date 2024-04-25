@@ -43,6 +43,7 @@ const UserSidebar = ({activepage}) => {
           </div>
           :
           <Link
+          style={{ textDecoration: 'none'}}
             to='/profile/accountsettings'
             className='stylenone'
 
@@ -70,6 +71,7 @@ const UserSidebar = ({activepage}) => {
 
           :
           <Link
+          style={{ textDecoration: 'none'}}
             to='/profile/changepassword' className='stylenone'>
             <div className='s1'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -92,6 +94,7 @@ const UserSidebar = ({activepage}) => {
 
           :
           <Link
+          style={{ textDecoration: 'none'}}
             to='/profile/yourorders' className='stylenone'>
             <div className='s1'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -115,6 +118,7 @@ const UserSidebar = ({activepage}) => {
           </div>
           :
           <Link
+          style={{ textDecoration: 'none'}}
             to='/profile/address' className='stylenone'>
             <div className='s1'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -139,6 +143,7 @@ const UserSidebar = ({activepage}) => {
 
           :
           <Link
+          style={{ textDecoration: 'none'}}
             to='/profile/legalnotice' className='stylenone'>
             <div className='s1'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

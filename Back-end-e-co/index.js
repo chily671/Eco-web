@@ -134,16 +134,25 @@ app.get('/allproducts', async (req,res)=>{
 const Users = mongoose.model('Users',{
     name:{
         type:String,
+        required:true,
     },
     email:{
         type:String,
         unique:true,
     },
+    phone:{
+        type:Number,
+        unique:true,
+    },
     password:{
         type:String,
+        required:true,
     },
     cartData:{
         type:Object,
+    },
+    address:{
+        type:String,
     },
     date:{
         type:Date,
@@ -280,6 +289,16 @@ app.post('/getinfor',fetchUser,async(req,res)=>{
   res.json(user);
 })
 
+// Change infomation the user
+app.post('/changeinfo',async(req,res)=>{
+  let user = await Users.findOne({email:req.body.email});
+  user.name = req.body.username;
+  user.phone = req.body.phone;
+  user.email = req.body.email;
+  await user.updateOne({name:user.name,phone:user.phone,email:user.email});
+  console.log("Updated User Info");
+  res.send("Updated");
+})
 // host static files
 //app.use(express.static("client"));
 

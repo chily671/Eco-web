@@ -1,21 +1,9 @@
 import React, {useState} from 'react'
 import './UserAddress.css'
-const UserAddress = () => {
-    const [show, setShow] = useState(false)
-    
-    const savedaddress = [
-       {
-        AddressLine1: "AddressLine1",
-        AddressLine2: "AddressLine2",
-        AddressLine3: "AddressLine3",
-       },
-       {
-        AddressLine1: "AddressLine1",
-        AddressLine2: "AddressLine2",
-        AddressLine3: "AddressLine3",
-       }
+const UserAddress = (props) => {
+    const [show, setShow] = useState(false);
+    const {User} = props;
 
-    ]
     return (
         <div className='useraddress'>
             {
@@ -26,14 +14,9 @@ const UserAddress = () => {
 
                 <div className='addressin'>
                     {
-                        savedaddress.map((item, index) => {
-                            return (
-                                <div className='address' key={index}>
-                                    <span>{item.AddressLine1}</span>,
-                                    <span>{item.AddressLine2}</span>,
-                                    <span>{item.AddressLine3}</span>
-
-
+                        
+                                <div className='address' >
+                                    <span>{User.address}</span>
                                     <div className='delbtn'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -41,8 +24,7 @@ const UserAddress = () => {
 
                                     </div>
                                 </div>
-                            )
-                        })
+                        
                     }
                 </div>
             }
